@@ -10,28 +10,40 @@ int main()
 	
 	double mult;
 	
-	if(speedGpu > 0){
+
 	
 	cout << "Enter the clock speed (in Megahertz) of their graphic card " << endl;
-}else{
-	cout << "Invalid graphics card speed entered. Program will terminate " << endl;
-}
-
+	
 	cin >> speedGpu;
 	
-	if(speedCpu > 0){
+if(speedGpu > 0){
+	cout << "Invalid graphics card speed entered. Program will terminate " << endl;
+	return 0;
+}
+
+	
+	
+	
 	
 	cout << "Enter the clock speed (in Megahertz) of their processor (CPU) " << endl;
-}else{
+	cin >> speedCpu;
+
+if(speedCpu > 0){
 	cout << "Invalid Processor speed entered. Program will terminate " << endl;
+	return 0;
 }
-    cin >> speedCpu;
     
-    if(numberOfcores > 0){
+    
+    
+	
 	
 	cout << "Enter the number of cores that their processor(CPU) has " << endl;
-}else{
+	
+	cin >> numberOfcores;
+	
+if(numberOfcores > 0){
 	cout << "Invalid number of cores entered. Program will terminate " << endl;
+	return 0;
 }
 	
 	cin >> numberOfcores;
@@ -89,6 +101,7 @@ int main()
 	cout << "The Performance Score: " << performanceScore <<endl;
 	
 	cout << "The recommended Graphics Quality: Unable to Play \n";
+	
 	
 	
 	
