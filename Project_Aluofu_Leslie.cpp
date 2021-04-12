@@ -6,13 +6,18 @@ using namespace std;
 
 int main()
 {
-	int speedGpu, speedCpu, numberOfcores, menu, performanceScore, numberOfcomputers;
+	int speedGpu, speedCpu, numberOfcores, menu, performanceScore, numberOfcomputers, computers;
 	
 	double mult;
 	
 	string text;
 	
 	string text2;
+	
+	string quality;
+	
+	int leastPerformance = INT_MAX;
+	double maxPerformance =0;
 	
 	cout << "How many computers are being processed? \n\n";		// ask user to input number of computers proccessed 
 	
@@ -24,6 +29,20 @@ if(numberOfcomputers < 0) 										// validate input entered by the user
 	return 0;
 	}	
 	
+		for (int computers = 0; computers <numberOfcomputers; computers++ )
+			{		performanceScore ;	
+			
+				}
+	
+	if(performanceScore < leastPerformance)
+	{
+		leastPerformance = performanceScore;	
+	}
+	
+	else if(performanceScore > maxPerformance)
+	{
+		maxPerformance = performanceScore;
+	}
 	
 	text2 = "Computer Hardware Graphics Quality Recommendation Tool \n\n";
 	
@@ -108,21 +127,65 @@ if(menu <1 or menu >4 )
 	
 	text = "Computer Hardware Graphics Quality Recommendation Tool \n";
 	
+	if(performanceScore > 17000)
+	{
+		quality = "Ultra";
+	}
+	else if(performanceScore > 15000 and performanceScore <= 17000)
+	{
+		quality = "High";
+	}
+	else if(performanceScore > 13000 and performanceScore <= 15000)
+	{
+		quality = "Medium";
+	}
+	else if(performanceScore > 11000 and performanceScore <= 13000)
+	{
+		quality = "Low";
+	}
+	else 
+	{
+		quality = "Unable to Play";
+	}
+	
+//		int highestPf;
+//	int lowestPf;
+	
+//	if(performanceScore >= 13000 and performanceScore <=17000)
+//	{
+//	highestPf;
+//	}
+//	else if(performanceScore > 11000)
+//	{
+//			lowestPf;
+//	}
+	
+	
 	cout << text << endl;
 	
-	cout << "GPU clock speed: " << speedGpu << endl;
+	cout << setprecision(2) << showpoint << fixed << endl;
 	
-	cout << "CPU clock speed: " << speedCpu << endl;
+	cout << "GPU clock speed: " << speedGpu << "MHz" << endl;
+	
+	cout << "CPU clock speed: " << speedCpu << "MHz" << endl;
 	
 	cout << "The number of cores: " << numberOfcores << endl;
 	
-	cout << "Monitor Resolution " << menu << endl;
-	
-	cout << setprecision(3) << showpoint << fixed << endl;
+	cout << "Monitor Resolution: " << menu << endl;
 	
 	cout << "The Performance Score: " << performanceScore <<endl;
 	
-	cout << "The recommended Graphics Quality: Unable to Play \n";
+	cout << "The recommended Graphics Quality: " << quality << endl;
+	
+	cout << "The highest performance score was: " << leastPerformance  << endl;
+	
+	cout << "The lowest performance score was: " << maxPerformance << endl;
+	
+		
+	cout << "How many computers are being processed? \n\n";		// ask user to input number of computers proccessed 
+	
+	cin >> numberOfcomputers;
+	
 	
 	
 	
